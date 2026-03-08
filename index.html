@@ -431,71 +431,45 @@
     .contact-link:hover { border-color: var(--accent); color: var(--accent); background: rgba(59,130,246,0.04); transform: translateX(4px); }
     .contact-link-icon { font-size: 1rem; }
 
-    /* ── CHAT ── */
-    .chat-wrap { display: flex; flex-direction: column; gap: 0.6rem; }
-    .chat-label { font-size: 0.73rem; color: var(--text2); letter-spacing: 0.08em; text-transform: uppercase; }
-    .chat-widget {
-      background: var(--card); border: 1px solid var(--border);
-      border-radius: var(--radius); overflow: hidden;
-      display: flex; flex-direction: column; height: 440px;
-      transition: background var(--transition), border-color var(--transition);
-    }
-    .chat-header {
-      padding: 0.9rem 1.2rem;
-      background: linear-gradient(135deg, #0F2347, #1B4A8A);
-      display: flex; align-items: center; gap: 0.8rem;
-    }
-    .chat-avatar {
-      width: 34px; height: 34px; border-radius: 50%;
-      background: var(--accent);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 0.95rem; color: white; font-weight: 500;
-      box-shadow: 0 0 12px rgba(59,130,246,0.4);
-    }
-    .chat-header-text h4 { color: white; font-size: 0.88rem; font-weight: 500; }
-    .chat-header-text p { color: rgba(255,255,255,0.55); font-size: 0.72rem; }
-    .chat-online { margin-left: auto; display: flex; align-items: center; gap: 0.4rem; font-size: 0.72rem; color: #34D399; }
-    .online-dot { width: 7px; height: 7px; border-radius: 50%; background: #34D399; box-shadow: 0 0 6px #34D399; }
-    .chat-messages { flex: 1; overflow-y: auto; padding: 1rem; display: flex; flex-direction: column; gap: 0.7rem; }
-    .chat-messages::-webkit-scrollbar { width: 3px; }
-    .chat-messages::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
-    .msg { max-width: 86%; padding: 0.65rem 0.95rem; border-radius: 12px; font-size: 0.85rem; line-height: 1.55; }
-    .msg-ai { background: var(--bg2); color: var(--text); border: 1px solid var(--border); border-bottom-left-radius: 3px; align-self: flex-start; transition: background var(--transition), border-color var(--transition); }
-    .msg-user { background: var(--accent); color: white; border-bottom-right-radius: 3px; align-self: flex-end; }
-    .typing-dots { display: flex; gap: 4px; padding: 0.2rem 0; }
-    .typing-dots span { width: 6px; height: 6px; border-radius: 50%; background: var(--text2); animation: bounce 1.2s infinite; }
-    .typing-dots span:nth-child(2) { animation-delay: 0.2s; }
-    .typing-dots span:nth-child(3) { animation-delay: 0.4s; }
-    @keyframes bounce { 0%,60%,100%{transform:translateY(0)} 30%{transform:translateY(-5px)} }
-    .chat-suggestions { padding: 0 1rem 0.7rem; display: flex; flex-wrap: wrap; gap: 0.4rem; }
-    .suggestion-btn {
-      font-size: 0.73rem; font-family: var(--sans);
-      padding: 0.28rem 0.65rem; border-radius: 20px;
-      border: 1px solid var(--accent); color: var(--accent);
-      background: transparent; cursor: pointer; transition: all 0.2s;
-    }
-    .suggestion-btn:hover { background: var(--accent); color: white; }
-    .chat-input-row {
-      display: flex; gap: 0.5rem; padding: 0.8rem 1rem;
-      border-top: 1px solid var(--border); background: var(--bg2);
-      transition: background var(--transition), border-color var(--transition);
-    }
-    .chat-input {
-      flex: 1; padding: 0.6rem 0.9rem;
+    /* ── CONTACT FORM ── */
+    .contact-form-wrap { display: flex; flex-direction: column; gap: 0.5rem; }
+    .form-label { font-size: 0.73rem; color: var(--text2); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.2rem; }
+    .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+    .form-group label { font-size: 0.82rem; font-weight: 500; color: var(--text); transition: color var(--transition); }
+    .form-input, .form-textarea {
+      padding: 0.75rem 1rem;
       border: 1px solid var(--border); border-radius: 8px;
-      font-family: var(--sans); font-size: 0.85rem;
-      color: var(--text); background: var(--card); outline: none;
-      transition: all var(--transition);
+      font-family: var(--sans); font-size: 0.88rem;
+      color: var(--text); background: var(--bg2);
+      outline: none; transition: all var(--transition);
+      width: 100%;
     }
-    .chat-input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-glow); }
-    .chat-send {
-      width: 36px; height: 36px; border-radius: 8px;
+    .form-input:focus, .form-textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-glow);
+      background: var(--card);
+    }
+    .form-textarea { resize: vertical; min-height: 110px; line-height: 1.6; }
+    .form-submit {
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+      padding: 0.8rem 1.6rem; border-radius: 8px;
       background: var(--accent); color: white; border: none;
-      cursor: pointer; font-size: 0.9rem;
-      display: flex; align-items: center; justify-content: center;
-      transition: all 0.2s; box-shadow: 0 2px 8px var(--accent-glow);
+      font-family: var(--sans); font-size: 0.9rem; font-weight: 600;
+      cursor: pointer; transition: all 0.2s;
+      box-shadow: 0 4px 16px var(--accent-glow);
+      width: 100%;
     }
-    .chat-send:hover { transform: scale(1.05); filter: brightness(1.15); }
+    .form-submit:hover { filter: brightness(1.1); transform: translateY(-2px); box-shadow: 0 8px 24px var(--accent-glow); }
+    .form-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+    .form-success {
+      display: none; text-align: center; padding: 2rem;
+      background: rgba(52,211,153,0.08); border: 1px solid rgba(52,211,153,0.25);
+      border-radius: var(--radius); color: #34D399;
+    }
+    .form-success .success-icon { font-size: 2rem; margin-bottom: 0.5rem; }
+    .form-success h4 { font-size: 1rem; font-weight: 600; margin-bottom: 0.3rem; }
+    .form-success p { font-size: 0.85rem; opacity: 0.8; }
 
     /* ── FOOTER ── */
     footer {
@@ -818,30 +792,33 @@
       </div>
     </div>
     <div class="fade-in">
-      <div class="chat-wrap">
-        <p class="chat-label">✨ Ask my AI assistant about me</p>
-        <div class="chat-widget">
-          <div class="chat-header">
-            <div class="chat-avatar">V</div>
-            <div class="chat-header-text">
-              <h4>Vernit's AI Assistant</h4>
-              <p>Powered by Claude · Ask anything</p>
-            </div>
-            <div class="chat-online"><div class="online-dot"></div> Online</div>
+      <div class="contact-form-wrap">
+        <p class="form-label">✉ Send me a message</p>
+        <form class="contact-form" id="contactForm">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input class="form-input" id="name" type="text" placeholder="John Smith" required/>
           </div>
-          <div class="chat-messages" id="chatMessages">
-            <div class="msg msg-ai">Hi there! 👋 I'm Vernit's AI assistant. Ask me about his skills, experience, projects, or whether he'd be a great fit for your team!</div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input class="form-input" id="email" type="email" placeholder="john@company.com" required/>
           </div>
-          <div class="chat-suggestions" id="chatSuggestions">
-            <button class="suggestion-btn" onclick="sendSuggestion(this)">What are his skills?</button>
-            <button class="suggestion-btn" onclick="sendSuggestion(this)">His experience?</button>
-            <button class="suggestion-btn" onclick="sendSuggestion(this)">Is he open to work?</button>
-            <button class="suggestion-btn" onclick="sendSuggestion(this)">Tell me about his projects</button>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input class="form-input" id="subject" type="text" placeholder="Job Opportunity / Collaboration"/>
           </div>
-          <div class="chat-input-row">
-            <input class="chat-input" id="chatInput" type="text" placeholder="Ask about Vernit..." onkeydown="if(event.key==='Enter') sendMessage()"/>
-            <button class="chat-send" onclick="sendMessage()">➤</button>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea class="form-textarea" id="message" placeholder="Hi Vernit, I came across your profile and..." required></textarea>
           </div>
+          <button type="submit" class="form-submit" id="submitBtn">
+            ✉ Send Message
+          </button>
+        </form>
+        <div class="form-success" id="formSuccess">
+          <div class="success-icon">✅</div>
+          <h4>Message sent!</h4>
+          <p>Thanks for reaching out. Vernit will get back to you soon.</p>
         </div>
       </div>
     </div>
@@ -882,96 +859,29 @@
     });
   });
 
-  // AI CHAT
-  const RESUME_CONTEXT = `You are an AI assistant on Vernit Tayal's personal portfolio website. Be professional, warm, and concise.
+  // CONTACT FORM — sends via mailto (works on GitHub Pages for free)
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const btn = document.getElementById('submitBtn');
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const subject = document.getElementById('subject').value || 'Portfolio Contact';
+    const message = document.getElementById('message').value;
 
-About Vernit:
-- Name: Vernit Tayal
-- Current Role: Analyst at Tata Consultancy Services (TCS), Gurugram, India
-- Client: BT Group, UK (leading telecom enterprise)
-- Duration: September 2024 – Present
-- Education: B.Tech Computer Science Engineering, Graphic Era University, Dehradun. GPA: 8.8/10
-- Target Roles: Business Analyst, Data Analyst at product companies like Amex, NAB, Signify
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
 
-Skills: SQL, Power BI (DAX, Power Query), Python (Pandas), Excel (VLOOKUP, Pivot Tables), EDA, ETL, Data Modelling, Requirements Gathering, BRD/FRD, Gap Analysis, User Stories, Process Mapping, RCA, KPI Frameworks, Stakeholder Management, ServiceNow, Salesforce, Jira, Confluence, Agile/Scrum, A/B Testing
+    // Build mailto link
+    const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+    const mailtoLink = `mailto:tayal.vernit.0802@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailtoLink;
 
-Work at TCS:
-- End-to-end order lifecycle analysis for BT Group improving SLA adherence by 15%
-- Root Cause Analysis (RCA) reducing repeat escalations by 12%
-- KPI dashboards and stakeholder reports for 10+ stakeholders
-- Cross-functional requirements gathering and stakeholder management
-- As-Is process flows, SOPs, BRD artefacts and gap analysis
-
-Projects:
-1. Customer Credit Risk & Delinquency Analysis (SQL, Python, Power BI) — 100K+ records, ETL pipeline, Power BI dashboard flagging 62% delinquency losses
-2. Sales & Revenue Performance Analytics (Power BI, SQL, DAX) — 15+ DAX measures, executive dashboards
-
-Certifications: Tata Group Data Analytics Virtual Job Simulation (Forage Oct 2024), Cognizant Ideathon 2023 top team, TCS internal recognition for SLA dashboard automation, pursuing Microsoft PL-300 Power BI certification
-
-Contact: tayal.vernit.0802@gmail.com | +91-9528381162 | linkedin.com/in/vernit-tayal-o8o2
-
-He is actively open to BA/DA opportunities. Keep answers under 3-4 sentences unless detail is needed.`;
-
-  const messagesEl = document.getElementById('chatMessages');
-  const inputEl = document.getElementById('chatInput');
-  let history = [];
-
-  function scrollChat() { messagesEl.scrollTop = messagesEl.scrollHeight; }
-
-  function addMsg(text, role) {
-    const d = document.createElement('div');
-    d.className = 'msg ' + (role === 'user' ? 'msg-user' : 'msg-ai');
-    d.textContent = text;
-    messagesEl.appendChild(d);
-    scrollChat();
-  }
-
-  function showTyping() {
-    const d = document.createElement('div');
-    d.className = 'msg msg-ai'; d.id = 'typing';
-    d.innerHTML = '<div class="typing-dots"><span></span><span></span><span></span></div>';
-    messagesEl.appendChild(d); scrollChat();
-  }
-  function hideTyping() { const t = document.getElementById('typing'); if(t) t.remove(); }
-
-  async function sendSuggestion(btn) {
-    document.getElementById('chatSuggestions').style.display = 'none';
-    await handleSend(btn.textContent);
-  }
-
-  async function sendMessage() {
-    const text = inputEl.value.trim();
-    if (!text) return;
-    inputEl.value = '';
-    document.getElementById('chatSuggestions').style.display = 'none';
-    await handleSend(text);
-  }
-
-  async function handleSend(text) {
-    addMsg(text, 'user');
-    history.push({ role: 'user', content: text });
-    showTyping();
-    try {
-      const res = await fetch('https://api.anthropic.com/v1/messages', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          model: 'claude-sonnet-4-20250514',
-          max_tokens: 1000,
-          system: RESUME_CONTEXT,
-          messages: history
-        })
-      });
-      const data = await res.json();
-      hideTyping();
-      const reply = data.content?.map(b => b.text||'').join('') || "Sorry, couldn't get a response right now.";
-      addMsg(reply, 'ai');
-      history.push({ role: 'assistant', content: reply });
-    } catch {
-      hideTyping();
-      addMsg("Something went wrong. Please try again shortly.", 'ai');
-    }
-  }
+    // Show success after short delay
+    setTimeout(() => {
+      document.getElementById('contactForm').style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+    }, 800);
+  });
 </script>
 </body>
 </html>
