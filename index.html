@@ -12,7 +12,6 @@
       --navy: #1B3A6B;
       --accent: #3B82F6;
       --accent-glow: rgba(59,130,246,0.25);
-
       --bg: #FFFFFF;
       --bg2: #F7F8FA;
       --bg3: #EEF1F5;
@@ -21,7 +20,6 @@
       --border: #E5E7EB;
       --card: #FFFFFF;
       --nav-bg: rgba(255,255,255,0.92);
-
       --serif: 'Playfair Display', Georgia, serif;
       --sans: 'Inter', sans-serif;
       --radius: 14px;
@@ -50,7 +48,6 @@
       transition: background var(--transition), color var(--transition);
     }
 
-    /* ── NAV ── */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 200;
       display: flex; justify-content: space-between; align-items: center;
@@ -60,431 +57,238 @@
       border-bottom: 1px solid var(--border);
       transition: background var(--transition), border-color var(--transition);
     }
-    .nav-logo {
-      font-family: var(--serif);
-      font-size: 1.2rem;
-      color: var(--navy);
-      text-decoration: none;
-      transition: color var(--transition);
-    }
+    .nav-logo { font-family: var(--serif); font-size: 1.2rem; color: var(--navy); text-decoration: none; transition: color var(--transition); }
     .nav-right { display: flex; align-items: center; gap: 2rem; }
     .nav-links { display: flex; gap: 1.8rem; list-style: none; }
-    .nav-links a {
-      text-decoration: none;
-      font-size: 0.82rem;
-      font-weight: 400;
-      color: var(--text2);
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      transition: color 0.2s;
-    }
+    .nav-links a { text-decoration: none; font-size: 0.82rem; font-weight: 400; color: var(--text2); letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
     .nav-links a:hover, .nav-links a.active { color: var(--accent); }
 
-    /* Dark mode toggle */
     .theme-toggle {
-      width: 48px; height: 26px;
-      background: var(--bg3);
-      border: 1px solid var(--border);
-      border-radius: 50px;
-      cursor: pointer;
-      position: relative;
-      transition: background var(--transition), border-color var(--transition);
-      flex-shrink: 0;
+      width: 48px; height: 26px; background: var(--bg3); border: 1px solid var(--border);
+      border-radius: 50px; cursor: pointer; position: relative;
+      transition: background var(--transition), border-color var(--transition); flex-shrink: 0;
     }
     .theme-toggle::after {
-      content: '';
-      position: absolute;
-      top: 3px; left: 3px;
-      width: 18px; height: 18px;
-      border-radius: 50%;
-      background: var(--accent);
-      transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
-      box-shadow: 0 0 8px var(--accent-glow);
+      content: ''; position: absolute; top: 3px; left: 3px;
+      width: 18px; height: 18px; border-radius: 50%; background: var(--accent);
+      transition: transform 0.3s cubic-bezier(0.4,0,0.2,1); box-shadow: 0 0 8px var(--accent-glow);
     }
     [data-theme="dark"] .theme-toggle::after { transform: translateX(22px); }
     .theme-icon { font-size: 0.7rem; position: absolute; top: 50%; transform: translateY(-50%); }
     .theme-icon.sun { left: 5px; }
     .theme-icon.moon { right: 5px; }
 
-    /* ── SECTIONS BASE ── */
     section { padding: 6rem 5vw; }
-    .section-label {
-      font-size: 0.72rem; font-weight: 500; letter-spacing: 0.16em;
-      text-transform: uppercase; color: var(--accent);
-      margin-bottom: 0.5rem;
-    }
-    .section-title {
-      font-family: var(--serif);
-      font-size: clamp(2rem, 4vw, 2.8rem);
-      color: var(--navy);
-      margin-bottom: 0.8rem;
-      transition: color var(--transition);
-    }
-    .section-divider {
-      width: 36px; height: 3px;
-      background: var(--accent);
-      border-radius: 2px;
-      margin-bottom: 3rem;
-    }
+    .section-label { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; }
+    .section-title { font-family: var(--serif); font-size: clamp(2rem, 4vw, 2.8rem); color: var(--navy); margin-bottom: 0.8rem; transition: color var(--transition); }
+    .section-divider { width: 36px; height: 3px; background: var(--accent); border-radius: 2px; margin-bottom: 3rem; }
 
-    /* ── HERO ── */
-    #home {
-      min-height: 100vh;
-      display: flex; align-items: center;
-      padding: 8rem 5vw 4rem;
-      background: var(--bg2);
-      position: relative; overflow: hidden;
-      transition: background var(--transition);
-    }
-    #home::before {
-      content: '';
-      position: absolute; top: -120px; right: -120px;
-      width: 600px; height: 600px; border-radius: 50%;
-      background: radial-gradient(circle, var(--accent-glow) 0%, transparent 65%);
-      pointer-events: none;
-    }
-    .hero-layout {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
-      width: 100%;
-      max-width: 1200px;
-      position: relative; z-index: 1;
-    }
+    /* HERO */
+    #home { min-height: 100vh; display: flex; align-items: center; padding: 8rem 5vw 4rem; background: var(--bg2); position: relative; overflow: hidden; transition: background var(--transition); }
+    #home::before { content: ''; position: absolute; top: -120px; right: -120px; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, var(--accent-glow) 0%, transparent 65%); pointer-events: none; }
+    .hero-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; width: 100%; max-width: 1200px; position: relative; z-index: 1; }
     .hero-inner { position: relative; z-index: 1; }
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em;
-      text-transform: uppercase; color: var(--accent);
-      border: 1px solid var(--accent-glow);
-      background: rgba(59,130,246,0.07);
-      padding: 0.35rem 1rem; border-radius: 40px; margin-bottom: 1.8rem;
-    }
+    .hero-badge { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); border: 1px solid var(--accent-glow); background: rgba(59,130,246,0.07); padding: 0.35rem 1rem; border-radius: 40px; margin-bottom: 1.8rem; }
     .badge-dot { width: 6px; height: 6px; border-radius: 50%; background: #34D399; box-shadow: 0 0 6px #34D399; }
-    .hero-name {
-      font-family: var(--serif);
-      font-size: clamp(3rem, 5.5vw, 5rem);
-      font-weight: 800;
-      line-height: 1.05;
-      color: var(--text);
-      margin-bottom: 0.4rem;
-      white-space: nowrap;
-      transition: color var(--transition);
-    }
+    .hero-name { font-family: var(--serif); font-size: clamp(3rem, 5.5vw, 5rem); font-weight: 800; line-height: 1.05; color: var(--text); margin-bottom: 0.4rem; white-space: nowrap; transition: color var(--transition); }
     .hero-name span { color: var(--accent); }
-    .hero-role {
-      font-family: var(--sans);
-      font-size: clamp(0.95rem, 1.8vw, 1.1rem);
-      color: var(--text2);
-      font-weight: 400;
-      font-style: normal;
-      letter-spacing: 0.03em;
-      margin-bottom: 1.4rem;
-      transition: color var(--transition);
-    }
+    .hero-role { font-family: var(--sans); font-size: clamp(0.95rem, 1.8vw, 1.1rem); color: var(--text2); font-weight: 400; letter-spacing: 0.03em; margin-bottom: 1.4rem; transition: color var(--transition); }
     .hero-role strong { color: var(--accent); font-weight: 600; }
-    .hero-sub {
-      font-size: 0.97rem; color: var(--text2);
-      max-width: 480px; line-height: 1.85;
-      margin-bottom: 2.5rem;
-      font-weight: 300;
-      transition: color var(--transition);
-    }
+    .hero-sub { font-size: 0.97rem; color: var(--text2); max-width: 480px; line-height: 1.85; margin-bottom: 2.5rem; font-weight: 300; transition: color var(--transition); }
     .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
-
-    /* Hero right — visual panel */
-    .hero-visual {
-      display: flex; align-items: center; justify-content: center;
-      position: relative;
-    }
-    .hero-card-stack {
-      position: relative; width: 100%; max-width: 440px;
-    }
-    /* Main analytics window */
-    .hero-img-card {
-      background: #0D1117;
-      border-radius: 16px;
-      border: 1px solid rgba(59,130,246,0.2);
-      box-shadow: 0 28px 70px rgba(0,0,0,0.35);
-      overflow: hidden;
-      font-family: 'Courier New', monospace;
-    }
-    .code-titlebar {
-      background: #161B22; padding: 0.6rem 1rem;
-      display: flex; align-items: center; gap: 0.5rem;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-    }
+    .hero-visual { display: flex; align-items: center; justify-content: center; position: relative; }
+    .hero-card-stack { position: relative; width: 100%; max-width: 440px; }
+    .hero-img-card { background: #0D1117; border-radius: 16px; border: 1px solid rgba(59,130,246,0.2); box-shadow: 0 28px 70px rgba(0,0,0,0.35); overflow: hidden; font-family: 'Courier New', monospace; }
+    .code-titlebar { background: #161B22; padding: 0.6rem 1rem; display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.06); }
     .dot { width: 10px; height: 10px; border-radius: 50%; }
-    .dot.r { background: #FF5F57; }
-    .dot.y { background: #FFBD2E; }
-    .dot.g { background: #28CA42; }
+    .dot.r { background: #FF5F57; } .dot.y { background: #FFBD2E; } .dot.g { background: #28CA42; }
     .code-filename { font-size: 0.7rem; color: rgba(255,255,255,0.35); margin-left: 0.5rem; }
     .code-body { padding: 1rem 1.2rem; }
     .code-line { display: flex; gap: 0.8rem; margin-bottom: 0.22rem; font-size: 0.72rem; line-height: 1.5; }
     .ln { color: rgba(255,255,255,0.18); min-width: 14px; text-align: right; user-select: none; }
-    .kw { color: #FF7B72; }   /* keyword - red */
-    .fn { color: #D2A8FF; }   /* function - purple */
-    .st { color: #A5D6FF; }   /* string - blue */
-    .cm { color: #8B949E; }   /* comment - gray */
-    .nm { color: #79C0FF; }   /* number - light blue */
-    .op { color: #E6EDF3; }   /* operator/plain */
-    .vr { color: #FFA657; }   /* variable - orange */
-
-    /* Mini chart */
-    .chart-block {
-      background: #161B22; border-top: 1px solid rgba(255,255,255,0.06);
-      padding: 0.8rem 1.2rem 1rem;
-    }
+    .kw { color: #FF7B72; } .fn { color: #D2A8FF; } .st { color: #A5D6FF; }
+    .cm { color: #8B949E; } .nm { color: #79C0FF; } .op { color: #E6EDF3; } .vr { color: #FFA657; }
+    .chart-block { background: #161B22; border-top: 1px solid rgba(255,255,255,0.06); padding: 0.8rem 1.2rem 1rem; }
     .chart-label { font-size: 0.65rem; color: rgba(255,255,255,0.35); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.7rem; font-family: var(--sans); }
     .chart-bars { display: flex; align-items: flex-end; gap: 5px; height: 48px; }
-    .bar {
-      flex: 1; border-radius: 3px 3px 0 0;
-      background: rgba(59,130,246,0.5);
-      position: relative; transition: background 0.3s;
-    }
+    .bar { flex: 1; border-radius: 3px 3px 0 0; background: rgba(59,130,246,0.5); }
     .bar:nth-child(3n+1) { background: rgba(59,130,246,0.7); }
     .bar:nth-child(3n+2) { background: rgba(99,179,237,0.5); }
     .bar.highlight { background: #3B82F6; box-shadow: 0 0 8px rgba(59,130,246,0.6); }
-    .chart-line-wrap { position: relative; height: 36px; margin-top: 0.5rem; }
     svg.sparkline { width: 100%; height: 36px; }
-
-    /* Float badge */
-    .hero-float-badge {
-      position: absolute; bottom: -18px; right: 16px;
-      background: var(--card); border: 1px solid var(--border);
-      border-radius: 12px; padding: 0.65rem 1rem;
-      display: flex; align-items: center; gap: 0.6rem;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-      transition: background var(--transition), border-color var(--transition);
-    }
+    .hero-float-badge { position: absolute; bottom: -18px; right: 16px; background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 0.65rem 1rem; display: flex; align-items: center; gap: 0.6rem; box-shadow: 0 8px 24px rgba(0,0,0,0.15); transition: background var(--transition), border-color var(--transition); }
     .float-icon { font-size: 1.1rem; }
     .float-text { font-size: 0.75rem; font-weight: 600; color: var(--text); line-height: 1.3; transition: color var(--transition); }
     .float-sub { font-size: 0.63rem; color: var(--text2); font-weight: 400; transition: color var(--transition); }
 
-    /* Buttons */
-    .btn {
-      display: inline-flex; align-items: center; gap: 0.45rem;
-      padding: 0.75rem 1.6rem; border-radius: 8px;
-      font-family: var(--sans); font-size: 0.88rem; font-weight: 500;
-      cursor: pointer; text-decoration: none;
-      transition: all 0.2s; border: none; letter-spacing: 0.02em;
-    }
-    .btn-primary {
-      background: var(--accent); color: white;
-      box-shadow: 0 4px 20px var(--accent-glow);
-    }
+    .btn { display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.75rem 1.6rem; border-radius: 8px; font-family: var(--sans); font-size: 0.88rem; font-weight: 500; cursor: pointer; text-decoration: none; transition: all 0.2s; border: none; letter-spacing: 0.02em; }
+    .btn-primary { background: var(--accent); color: white; box-shadow: 0 4px 20px var(--accent-glow); }
     .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 28px var(--accent-glow); filter: brightness(1.1); }
-    .btn-ghost {
-      background: transparent; color: var(--text);
-      border: 1.5px solid var(--border);
-      transition: all 0.2s;
-    }
+    .btn-ghost { background: transparent; color: var(--text); border: 1.5px solid var(--border); }
     .btn-ghost:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+    .btn-sm { padding: 0.5rem 1rem; font-size: 0.8rem; }
 
-    /* Scroll indicator */
-    .hero-scroll {
-      position: absolute; bottom: 2.5rem; left: 5vw;
-      display: flex; align-items: center; gap: 0.8rem;
-      color: var(--text2); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;
-    }
-    .scroll-line {
-      width: 40px; height: 1px;
-      background: linear-gradient(to right, var(--accent), transparent);
-    }
+    .hero-scroll { position: absolute; bottom: 2.5rem; left: 5vw; display: flex; align-items: center; gap: 0.8rem; color: var(--text2); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; }
+    .scroll-line { width: 40px; height: 1px; background: linear-gradient(to right, var(--accent), transparent); }
 
-    /* ── ABOUT ── */
+    /* ABOUT */
     #about { background: var(--bg); transition: background var(--transition); }
-    .about-grid {
-      display: grid; grid-template-columns: 1.1fr 0.9fr;
-      gap: 5rem; align-items: start; max-width: 1100px;
-    }
+    .about-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 5rem; align-items: start; max-width: 1100px; }
     .about-text p { color: var(--text2); margin-bottom: 1.2rem; font-size: 0.97rem; line-height: 1.85; transition: color var(--transition); }
     .about-text strong { color: var(--text); font-weight: 500; }
     .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    .stat-card {
-      padding: 1.5rem; background: var(--bg2);
-      border: 1px solid var(--border); border-radius: var(--radius);
-      transition: background var(--transition), border-color var(--transition), transform 0.2s;
-    }
+    .stat-card { padding: 1.5rem; background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); transition: background var(--transition), border-color var(--transition), transform 0.2s; }
     .stat-card:hover { transform: translateY(-3px); border-color: var(--accent); }
     .stat-num { font-family: var(--serif); font-size: 2.2rem; color: var(--accent); line-height: 1; }
     .stat-label { font-size: 0.8rem; color: var(--text2); margin-top: 0.3rem; transition: color var(--transition); }
 
-    /* ── SKILLS ── */
+    /* SKILLS */
     #skills { background: var(--bg2); transition: background var(--transition); }
     .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.2rem; max-width: 1100px; }
-    .skill-card {
-      background: var(--card); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 1.6rem;
-      transition: transform 0.2s, box-shadow 0.2s, background var(--transition), border-color var(--transition);
-    }
+    .skill-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.6rem; transition: transform 0.2s, box-shadow 0.2s, background var(--transition), border-color var(--transition); }
     .skill-card:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(59,130,246,0.1); border-color: rgba(59,130,246,0.3); }
-    .skill-icon {
-      width: 38px; height: 38px; border-radius: 9px;
-      background: rgba(59,130,246,0.1);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.1rem; margin-bottom: 1rem;
-    }
+    .skill-icon { width: 38px; height: 38px; border-radius: 9px; background: rgba(59,130,246,0.1); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; margin-bottom: 1rem; }
     .skill-card h3 { font-family: var(--serif); font-size: 1.05rem; color: var(--navy); margin-bottom: 0.9rem; transition: color var(--transition); }
     .skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-    .tag {
-      font-size: 0.73rem; font-weight: 400;
-      background: var(--bg3); color: var(--text2);
-      border: 1px solid var(--border);
-      padding: 0.22rem 0.6rem; border-radius: 20px;
-      transition: background var(--transition), color var(--transition), border-color var(--transition);
-    }
+    .tag { font-size: 0.73rem; font-weight: 400; background: var(--bg3); color: var(--text2); border: 1px solid var(--border); padding: 0.22rem 0.6rem; border-radius: 20px; transition: background var(--transition), color var(--transition), border-color var(--transition); }
 
-    /* ── PROJECTS ── */
+    /* PROJECTS */
     #projects { background: var(--bg); transition: background var(--transition); }
-    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 1.8rem; max-width: 1100px; }
-    .project-card {
-      border: 1px solid var(--border); border-radius: var(--radius);
-      overflow: hidden; background: var(--card);
-      transition: transform 0.25s, box-shadow 0.25s, background var(--transition), border-color var(--transition);
-    }
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.8rem; max-width: 1100px; }
+    .project-card { border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; background: var(--card); transition: transform 0.25s, box-shadow 0.25s, background var(--transition), border-color var(--transition); }
     .project-card:hover { transform: translateY(-5px); box-shadow: 0 16px 50px rgba(59,130,246,0.12); border-color: rgba(59,130,246,0.3); }
-    .project-top {
-      padding: 2rem;
-      background: linear-gradient(135deg, #0F2347 0%, #1B4A8A 50%, #2563EB 100%);
-      position: relative; overflow: hidden;
-    }
-    .project-top::after {
-      content: '';
-      position: absolute; bottom: -20px; right: -20px;
-      width: 100px; height: 100px; border-radius: 50%;
-      background: rgba(255,255,255,0.04);
-    }
+    .project-top { padding: 2rem; background: linear-gradient(135deg, #0F2347 0%, #1B4A8A 50%, #2563EB 100%); position: relative; overflow: hidden; }
+    .project-top::after { content: ''; position: absolute; bottom: -20px; right: -20px; width: 100px; height: 100px; border-radius: 50%; background: rgba(255,255,255,0.04); }
+    .project-top.datagenie-top { background: linear-gradient(135deg, #064E3B 0%, #065F46 50%, #059669 100%); }
     .project-num { font-family: var(--serif); font-size: 3rem; color: rgba(255,255,255,0.12); line-height: 1; }
     .project-title { font-family: var(--serif); font-size: 1.15rem; color: white; line-height: 1.3; }
     .project-body { padding: 1.6rem; }
     .project-desc { font-size: 0.88rem; color: var(--text2); margin-bottom: 1.2rem; line-height: 1.75; transition: color var(--transition); }
     .project-highlights { list-style: none; margin-bottom: 1.4rem; }
-    .project-highlights li {
-      font-size: 0.84rem; color: var(--text);
-      padding: 0.28rem 0 0.28rem 1rem; position: relative;
-      transition: color var(--transition);
-    }
+    .project-highlights li { font-size: 0.84rem; color: var(--text); padding: 0.28rem 0 0.28rem 1rem; position: relative; transition: color var(--transition); }
     .project-highlights li::before { content: '▸'; position: absolute; left: 0; color: var(--accent); font-size: 0.65rem; top: 0.42rem; }
-    .project-tools { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+    .project-tools { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 1.2rem; }
+    .project-actions { display: flex; gap: 0.6rem; flex-wrap: wrap; }
 
-    /* ── CERTIFICATIONS ── */
+    /* DataGenie live badge */
+    .live-badge { display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #10B981; background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.25); padding: 0.2rem 0.6rem; border-radius: 20px; margin-bottom: 0.8rem; }
+    .live-dot { width: 6px; height: 6px; border-radius: 50%; background: #10B981; box-shadow: 0 0 6px #10B981; animation: livePulse 2s infinite; }
+    @keyframes livePulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+    /* MODAL */
+    .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.7); backdrop-filter: blur(8px); z-index: 1000; display: flex; align-items: center; justify-content: center; padding: 1rem; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
+    .modal-overlay.open { opacity: 1; pointer-events: all; }
+    .modal { background: var(--card); border: 1px solid var(--border); border-radius: 20px; width: 100%; max-width: 780px; max-height: 90vh; overflow: hidden; display: flex; flex-direction: column; transform: translateY(30px); transition: transform 0.3s, background var(--transition), border-color var(--transition); }
+    .modal-overlay.open .modal { transform: translateY(0); }
+
+    .modal-header { padding: 1.8rem 2rem 0; position: relative; }
+    .modal-close { position: absolute; top: 1.2rem; right: 1.5rem; width: 32px; height: 32px; border-radius: 50%; background: var(--bg3); border: 1px solid var(--border); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1rem; color: var(--text2); transition: all 0.2s; }
+    .modal-close:hover { background: var(--accent); color: white; border-color: var(--accent); }
+    .modal-brand { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+    .modal-icon { width: 48px; height: 48px; border-radius: 12px; background: linear-gradient(135deg, #064E3B, #059669); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; }
+    .modal-brand-text h2 { font-family: var(--serif); font-size: 1.6rem; color: var(--navy); transition: color var(--transition); }
+    .modal-brand-text p { font-size: 0.82rem; color: var(--text2); transition: color var(--transition); }
+
+    /* Tabs */
+    .modal-tabs { display: flex; gap: 0; border-bottom: 1px solid var(--border); padding: 0 2rem; margin-top: 0.5rem; }
+    .modal-tab { padding: 0.7rem 1.2rem; font-size: 0.82rem; font-weight: 500; color: var(--text2); cursor: pointer; border-bottom: 2px solid transparent; transition: all 0.2s; white-space: nowrap; }
+    .modal-tab:hover { color: var(--accent); }
+    .modal-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+    .modal-body { overflow-y: auto; padding: 1.8rem 2rem; flex: 1; }
+    .modal-body::-webkit-scrollbar { width: 4px; }
+    .modal-body::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    /* Overview tab */
+    .overview-flow { display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+    .flow-step { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 0.4rem 0.8rem; font-size: 0.78rem; font-weight: 500; color: var(--text); transition: background var(--transition), border-color var(--transition); }
+    .flow-arrow { color: var(--accent); font-size: 0.8rem; }
+    .overview-desc { font-size: 0.9rem; color: var(--text2); line-height: 1.8; margin-bottom: 1.2rem; transition: color var(--transition); }
+    .overview-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.5rem; }
+    .ov-stat { background: var(--bg2); border: 1px solid var(--border); border-radius: 10px; padding: 1rem; text-align: center; transition: background var(--transition), border-color var(--transition); }
+    .ov-stat-num { font-family: var(--serif); font-size: 1.6rem; color: #059669; }
+    .ov-stat-label { font-size: 0.72rem; color: var(--text2); margin-top: 0.2rem; transition: color var(--transition); }
+
+    /* Tech stack tab */
+    .tech-table { width: 100%; border-collapse: collapse; }
+    .tech-table th { text-align: left; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text2); padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--border); }
+    .tech-table td { padding: 0.8rem; font-size: 0.85rem; color: var(--text); border-bottom: 1px solid var(--border); vertical-align: top; transition: color var(--transition); }
+    .tech-table tr:last-child td { border-bottom: none; }
+    .tech-table tr:hover td { background: var(--bg2); }
+    .tech-name { font-weight: 600; color: var(--navy); transition: color var(--transition); }
+    .cost-free { color: #10B981; font-weight: 600; font-size: 0.75rem; }
+
+    /* Use cases tab */
+    .usecase-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 10px; padding: 1.2rem; margin-bottom: 0.8rem; transition: background var(--transition), border-color var(--transition); }
+    .usecase-card h4 { font-size: 0.92rem; font-weight: 600; color: var(--navy); margin-bottom: 0.4rem; transition: color var(--transition); }
+    .usecase-card p { font-size: 0.83rem; color: var(--text2); line-height: 1.6; transition: color var(--transition); }
+    .usecase-icon { font-size: 1.2rem; margin-bottom: 0.5rem; }
+
+    /* Limitations tab */
+    .limitation-item { display: flex; gap: 1rem; margin-bottom: 1.2rem; padding-bottom: 1.2rem; border-bottom: 1px solid var(--border); }
+    .limitation-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .lim-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 0.1rem; }
+    .lim-body h4 { font-size: 0.88rem; font-weight: 600; color: var(--text); margin-bottom: 0.3rem; transition: color var(--transition); }
+    .lim-body p { font-size: 0.82rem; color: var(--text2); line-height: 1.6; transition: color var(--transition); }
+    .lim-fix { font-size: 0.78rem; color: #10B981; margin-top: 0.3rem; font-weight: 500; }
+
+    .modal-footer { padding: 1.2rem 2rem; border-top: 1px solid var(--border); display: flex; gap: 0.8rem; align-items: center; flex-wrap: wrap; }
+    .modal-footer p { font-size: 0.8rem; color: var(--text2); flex: 1; transition: color var(--transition); }
+
+    /* CERTIFICATIONS */
     #certifications { background: var(--bg2); transition: background var(--transition); }
     .certs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.2rem; max-width: 1100px; }
-    .cert-card {
-      background: var(--card); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 1.6rem;
-      display: flex; align-items: flex-start; gap: 1.2rem;
-      transition: transform 0.2s, border-color 0.2s, background var(--transition);
-    }
+    .cert-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.6rem; display: flex; align-items: flex-start; gap: 1.2rem; transition: transform 0.2s, border-color 0.2s, background var(--transition); }
     .cert-card:hover { transform: translateY(-3px); border-color: var(--accent); }
-    .cert-icon {
-      width: 44px; height: 44px; border-radius: 10px; flex-shrink: 0;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.3rem;
-    }
+    .cert-icon { width: 44px; height: 44px; border-radius: 10px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; }
     .cert-icon.blue { background: rgba(59,130,246,0.12); }
     .cert-icon.green { background: rgba(52,211,153,0.12); }
     .cert-icon.orange { background: rgba(251,146,60,0.12); }
     .cert-body h4 { font-size: 0.95rem; font-weight: 500; color: var(--text); margin-bottom: 0.3rem; transition: color var(--transition); }
     .cert-body p { font-size: 0.82rem; color: var(--text2); line-height: 1.6; transition: color var(--transition); }
-    .cert-badge {
-      display: inline-block; margin-top: 0.6rem;
-      font-size: 0.7rem; font-weight: 500; letter-spacing: 0.06em;
-      text-transform: uppercase; color: var(--accent);
-      background: rgba(59,130,246,0.1); border: 1px solid rgba(59,130,246,0.2);
-      padding: 0.18rem 0.55rem; border-radius: 20px;
-    }
+    .cert-badge { display: inline-block; margin-top: 0.6rem; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); background: rgba(59,130,246,0.1); border: 1px solid rgba(59,130,246,0.2); padding: 0.18rem 0.55rem; border-radius: 20px; }
     .cert-badge.pursuing { color: #F59E0B; background: rgba(245,158,11,0.1); border-color: rgba(245,158,11,0.2); }
 
-    /* ── RESUME ── */
+    /* RESUME */
     #resume { background: var(--bg); transition: background var(--transition); }
     .resume-inner { max-width: 640px; }
-    .resume-card {
-      background: var(--bg2); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 2.2rem;
-      display: flex; align-items: center; gap: 1.8rem;
-      transition: background var(--transition), border-color var(--transition);
-    }
-    .resume-icon-box {
-      width: 64px; height: 64px; border-radius: 14px; flex-shrink: 0;
-      background: rgba(59,130,246,0.1); border: 1px solid rgba(59,130,246,0.2);
-      display: flex; align-items: center; justify-content: center; font-size: 1.8rem;
-    }
+    .resume-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 2.2rem; display: flex; align-items: center; gap: 1.8rem; transition: background var(--transition), border-color var(--transition); }
+    .resume-icon-box { width: 64px; height: 64px; border-radius: 14px; flex-shrink: 0; background: rgba(59,130,246,0.1); border: 1px solid rgba(59,130,246,0.2); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; }
     .resume-card-text h3 { font-family: var(--serif); font-size: 1.2rem; color: var(--navy); margin-bottom: 0.3rem; transition: color var(--transition); }
     .resume-card-text p { font-size: 0.85rem; color: var(--text2); margin-bottom: 1rem; transition: color var(--transition); }
 
-    /* ── CONTACT ── */
+    /* CONTACT */
     #contact { background: var(--bg2); transition: background var(--transition); }
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; max-width: 1100px; align-items: start; }
     .contact-info h3 { font-family: var(--serif); font-size: 1.5rem; color: var(--navy); margin-bottom: 0.8rem; transition: color var(--transition); }
     .contact-info p { color: var(--text2); font-size: 0.95rem; line-height: 1.8; margin-bottom: 2rem; transition: color var(--transition); }
     .contact-links { display: flex; flex-direction: column; gap: 0.8rem; }
-    .contact-link {
-      display: flex; align-items: center; gap: 0.9rem;
-      text-decoration: none; color: var(--text);
-      font-size: 0.88rem; padding: 0.85rem 1.1rem;
-      border: 1px solid var(--border); border-radius: 10px;
-      transition: all 0.2s;
-    }
+    .contact-link { display: flex; align-items: center; gap: 0.9rem; text-decoration: none; color: var(--text); font-size: 0.88rem; padding: 0.85rem 1.1rem; border: 1px solid var(--border); border-radius: 10px; transition: all 0.2s; }
     .contact-link:hover { border-color: var(--accent); color: var(--accent); background: rgba(59,130,246,0.04); transform: translateX(4px); }
     .contact-link-icon { font-size: 1rem; }
-
-    /* ── CONTACT FORM ── */
     .contact-form-wrap { display: flex; flex-direction: column; gap: 0.5rem; }
     .form-label { font-size: 0.73rem; color: var(--text2); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.2rem; }
     .contact-form { display: flex; flex-direction: column; gap: 1rem; }
     .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
     .form-group label { font-size: 0.82rem; font-weight: 500; color: var(--text); transition: color var(--transition); }
-    .form-input, .form-textarea {
-      padding: 0.75rem 1rem;
-      border: 1px solid var(--border); border-radius: 8px;
-      font-family: var(--sans); font-size: 0.88rem;
-      color: var(--text); background: var(--bg2);
-      outline: none; transition: all var(--transition);
-      width: 100%;
-    }
-    .form-input:focus, .form-textarea:focus {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 3px var(--accent-glow);
-      background: var(--card);
-    }
+    .form-input, .form-textarea { padding: 0.75rem 1rem; border: 1px solid var(--border); border-radius: 8px; font-family: var(--sans); font-size: 0.88rem; color: var(--text); background: var(--bg2); outline: none; transition: all var(--transition); width: 100%; }
+    .form-input:focus, .form-textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-glow); background: var(--card); }
     .form-textarea { resize: vertical; min-height: 110px; line-height: 1.6; }
-    .form-submit {
-      display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
-      padding: 0.8rem 1.6rem; border-radius: 8px;
-      background: var(--accent); color: white; border: none;
-      font-family: var(--sans); font-size: 0.9rem; font-weight: 600;
-      cursor: pointer; transition: all 0.2s;
-      box-shadow: 0 4px 16px var(--accent-glow);
-      width: 100%;
-    }
-    .form-submit:hover { filter: brightness(1.1); transform: translateY(-2px); box-shadow: 0 8px 24px var(--accent-glow); }
-    .form-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
-    .form-success {
-      display: none; text-align: center; padding: 2rem;
-      background: rgba(52,211,153,0.08); border: 1px solid rgba(52,211,153,0.25);
-      border-radius: var(--radius); color: #34D399;
-    }
+    .form-submit { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.8rem 1.6rem; border-radius: 8px; background: var(--accent); color: white; border: none; font-family: var(--sans); font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all 0.2s; box-shadow: 0 4px 16px var(--accent-glow); width: 100%; }
+    .form-submit:hover { filter: brightness(1.1); transform: translateY(-2px); }
+    .form-success { display: none; text-align: center; padding: 2rem; background: rgba(52,211,153,0.08); border: 1px solid rgba(52,211,153,0.25); border-radius: var(--radius); color: #34D399; }
     .form-success .success-icon { font-size: 2rem; margin-bottom: 0.5rem; }
     .form-success h4 { font-size: 1rem; font-weight: 600; margin-bottom: 0.3rem; }
     .form-success p { font-size: 0.85rem; opacity: 0.8; }
 
-    /* ── FOOTER ── */
-    footer {
-      padding: 1.8rem 5vw; border-top: 1px solid var(--border);
-      display: flex; justify-content: space-between; align-items: center;
-      flex-wrap: wrap; gap: 1rem; background: var(--bg);
-      transition: background var(--transition), border-color var(--transition);
-    }
+    footer { padding: 1.8rem 5vw; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; background: var(--bg); transition: background var(--transition), border-color var(--transition); }
     footer p { font-size: 0.8rem; color: var(--text2); transition: color var(--transition); }
 
-    /* ── FADE ── */
     .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.65s ease, transform 0.65s ease; }
     .fade-in.visible { opacity: 1; transform: translateY(0); }
-    .fade-in:nth-child(2) { transition-delay: 0.1s; }
-    .fade-in:nth-child(3) { transition-delay: 0.2s; }
 
     @media (max-width: 768px) {
       .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -494,12 +298,13 @@
       .hero-layout { grid-template-columns: 1fr; gap: 2.5rem; }
       .hero-visual { display: none; }
       .hero-name { white-space: normal; }
+      .overview-stats { grid-template-columns: 1fr 1fr; }
+      .modal { max-height: 95vh; }
     }
   </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <a href="#home" class="nav-logo">Vernit Tayal</a>
   <div class="nav-right">
@@ -522,10 +327,7 @@
 <section id="home">
   <div class="hero-layout fade-in">
     <div class="hero-inner">
-      <div class="hero-badge">
-        <span class="badge-dot"></span>
-        Open to BA &amp; DA Roles
-      </div>
+      <div class="hero-badge"><span class="badge-dot"></span>Open to BA &amp; DA Roles</div>
       <h1 class="hero-name">Vernit <span>Tayal</span></h1>
       <p class="hero-role">Analyst at <strong>TCS</strong> · Supporting BT Group, UK</p>
       <p class="hero-sub">Turning messy data and complex processes into clear business decisions — through SQL, Power BI, and sharp analytical thinking.</p>
@@ -560,47 +362,28 @@
           <div class="chart-block">
             <div class="chart-label">Monthly Delinquency Rate — BT Orders</div>
             <div class="chart-bars">
-              <div class="bar" style="height:30%"></div>
-              <div class="bar" style="height:45%"></div>
-              <div class="bar" style="height:38%"></div>
-              <div class="bar" style="height:60%"></div>
-              <div class="bar" style="height:52%"></div>
-              <div class="bar highlight" style="height:75%"></div>
-              <div class="bar" style="height:55%"></div>
-              <div class="bar" style="height:42%"></div>
-              <div class="bar" style="height:65%"></div>
-              <div class="bar highlight" style="height:85%"></div>
-              <div class="bar" style="height:48%"></div>
-              <div class="bar" style="height:35%"></div>
+              <div class="bar" style="height:30%"></div><div class="bar" style="height:45%"></div>
+              <div class="bar" style="height:38%"></div><div class="bar" style="height:60%"></div>
+              <div class="bar" style="height:52%"></div><div class="bar highlight" style="height:75%"></div>
+              <div class="bar" style="height:55%"></div><div class="bar" style="height:42%"></div>
+              <div class="bar" style="height:65%"></div><div class="bar highlight" style="height:85%"></div>
+              <div class="bar" style="height:48%"></div><div class="bar" style="height:35%"></div>
             </div>
             <svg class="sparkline" viewBox="0 0 200 36" preserveAspectRatio="none">
-              <polyline points="0,32 20,26 40,28 60,18 80,22 100,10 120,14 140,8 160,12 180,6 200,9"
-                fill="none" stroke="#3B82F6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-              <polyline points="0,32 20,26 40,28 60,18 80,22 100,10 120,14 140,8 160,12 180,6 200,9 200,36 0,36"
-                fill="url(#grad)" stroke="none"/>
-              <defs>
-                <linearGradient id="grad" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.25"/>
-                  <stop offset="100%" stop-color="#3B82F6" stop-opacity="0"/>
-                </linearGradient>
-              </defs>
+              <polyline points="0,32 20,26 40,28 60,18 80,22 100,10 120,14 140,8 160,12 180,6 200,9" fill="none" stroke="#3B82F6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              <polyline points="0,32 20,26 40,28 60,18 80,22 100,10 120,14 140,8 160,12 180,6 200,9 200,36 0,36" fill="url(#grad)" stroke="none"/>
+              <defs><linearGradient id="grad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3B82F6" stop-opacity="0.25"/><stop offset="100%" stop-color="#3B82F6" stop-opacity="0"/></linearGradient></defs>
             </svg>
           </div>
         </div>
         <div class="hero-float-badge">
           <span class="float-icon">📊</span>
-          <div>
-            <div class="float-text">Power BI · SQL · Python</div>
-            <div class="float-sub">End-to-end analytics pipeline</div>
-          </div>
+          <div><div class="float-text">Power BI · SQL · Python</div><div class="float-sub">End-to-end analytics pipeline</div></div>
         </div>
       </div>
     </div>
   </div>
-  <div class="hero-scroll">
-    <div class="scroll-line"></div>
-    <span>Scroll down</span>
-  </div>
+  <div class="hero-scroll"><div class="scroll-line"></div><span>Scroll down</span></div>
 </section>
 
 <!-- ABOUT -->
@@ -630,42 +413,10 @@
   <h2 class="section-title">What I bring<br>to the table</h2>
   <div class="section-divider"></div>
   <div class="skills-grid fade-in">
-    <div class="skill-card">
-      <div class="skill-icon">📊</div>
-      <h3>Analytics</h3>
-      <div class="skill-tags">
-        <span class="tag">SQL</span><span class="tag">Power BI</span><span class="tag">DAX</span>
-        <span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Excel</span>
-        <span class="tag">EDA</span><span class="tag">ETL</span>
-      </div>
-    </div>
-    <div class="skill-card">
-      <div class="skill-icon">🗂️</div>
-      <h3>Business Analysis</h3>
-      <div class="skill-tags">
-        <span class="tag">Requirements Gathering</span><span class="tag">BRD/FRD</span>
-        <span class="tag">Gap Analysis</span><span class="tag">User Stories</span>
-        <span class="tag">Process Mapping</span><span class="tag">RCA</span>
-      </div>
-    </div>
-    <div class="skill-card">
-      <div class="skill-icon">🛠️</div>
-      <h3>Tools & Platforms</h3>
-      <div class="skill-tags">
-        <span class="tag">ServiceNow</span><span class="tag">Salesforce</span>
-        <span class="tag">Jira</span><span class="tag">Confluence</span>
-        <span class="tag">MS SQL Server</span><span class="tag">Agile/Scrum</span>
-      </div>
-    </div>
-    <div class="skill-card">
-      <div class="skill-icon">📈</div>
-      <h3>Data Skills</h3>
-      <div class="skill-tags">
-        <span class="tag">Data Modelling</span><span class="tag">KPI Frameworks</span>
-        <span class="tag">Stakeholder Mgmt</span><span class="tag">A/B Testing</span>
-        <span class="tag">Dashboard Design</span><span class="tag">Reporting</span>
-      </div>
-    </div>
+    <div class="skill-card"><div class="skill-icon">📊</div><h3>Analytics</h3><div class="skill-tags"><span class="tag">SQL</span><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Excel</span><span class="tag">EDA</span><span class="tag">ETL</span></div></div>
+    <div class="skill-card"><div class="skill-icon">🗂️</div><h3>Business Analysis</h3><div class="skill-tags"><span class="tag">Requirements Gathering</span><span class="tag">BRD/FRD</span><span class="tag">Gap Analysis</span><span class="tag">User Stories</span><span class="tag">Process Mapping</span><span class="tag">RCA</span></div></div>
+    <div class="skill-card"><div class="skill-icon">🛠️</div><h3>Tools & Platforms</h3><div class="skill-tags"><span class="tag">ServiceNow</span><span class="tag">Salesforce</span><span class="tag">Jira</span><span class="tag">Confluence</span><span class="tag">MS SQL Server</span><span class="tag">Agile/Scrum</span></div></div>
+    <div class="skill-card"><div class="skill-icon">📈</div><h3>Data Skills</h3><div class="skill-tags"><span class="tag">Data Modelling</span><span class="tag">KPI Frameworks</span><span class="tag">Stakeholder Mgmt</span><span class="tag">A/B Testing</span><span class="tag">Dashboard Design</span><span class="tag">Reporting</span></div></div>
   </div>
 </section>
 
@@ -675,6 +426,8 @@
   <h2 class="section-title">Work I'm<br>proud of</h2>
   <div class="section-divider"></div>
   <div class="projects-grid fade-in">
+
+    <!-- Project 01 -->
     <div class="project-card">
       <div class="project-top">
         <div class="project-num">01</div>
@@ -687,11 +440,11 @@
           <li>Applied data modelling &amp; feature engineering — top 5 default predictors</li>
           <li>Power BI dashboard flagging segments driving 62% of delinquency losses</li>
         </ul>
-        <div class="project-tools">
-          <span class="tag">SQL</span><span class="tag">Python</span><span class="tag">Power BI</span><span class="tag">Pandas</span><span class="tag">EDA</span>
-        </div>
+        <div class="project-tools"><span class="tag">SQL</span><span class="tag">Python</span><span class="tag">Power BI</span><span class="tag">Pandas</span><span class="tag">EDA</span></div>
       </div>
     </div>
+
+    <!-- Project 02 -->
     <div class="project-card">
       <div class="project-top">
         <div class="project-num">02</div>
@@ -704,11 +457,32 @@
           <li>Authored 15+ DAX measures: MoM growth, YoY variance, profit margin</li>
           <li>Built Revenue Trend, Regional Heatmap &amp; Product Mix dashboards</li>
         </ul>
-        <div class="project-tools">
-          <span class="tag">Power BI</span><span class="tag">SQL</span><span class="tag">DAX</span><span class="tag">Excel</span>
+        <div class="project-tools"><span class="tag">Power BI</span><span class="tag">SQL</span><span class="tag">DAX</span><span class="tag">Excel</span></div>
+      </div>
+    </div>
+
+    <!-- Project 03 — DataGenie -->
+    <div class="project-card" id="dataGenieCard">
+      <div class="project-top datagenie-top">
+        <div class="project-num">03</div>
+        <div class="project-title">DataGenie 🧞 — WhatsApp AI Data Analyst</div>
+      </div>
+      <div class="project-body">
+        <div class="live-badge"><span class="live-dot"></span> Live & Deployed</div>
+        <p class="project-desc">An AI-powered WhatsApp bot that analyses any Excel file — built from scratch and deployed on cloud. Send a file, ask a question, get instant insights or Excel reports.</p>
+        <ul class="project-highlights">
+          <li>AI generates accurate Pandas code to answer data questions</li>
+          <li>Auto file summary + Excel report with download link</li>
+          <li>Deployed 24/7 on Render.com with Twilio WhatsApp API</li>
+        </ul>
+        <div class="project-tools"><span class="tag">Python</span><span class="tag">Flask</span><span class="tag">Groq AI</span><span class="tag">Pandas</span><span class="tag">Twilio</span><span class="tag">Render</span></div>
+        <div class="project-actions">
+          <button class="btn btn-primary btn-sm" onclick="openModal()">📖 Full Details</button>
+          <a href="https://wa.me/14155238886?text=join%20this-involved" target="_blank" class="btn btn-ghost btn-sm">💬 Try on WhatsApp</a>
         </div>
       </div>
     </div>
+
   </div>
 </section>
 
@@ -718,38 +492,10 @@
   <h2 class="section-title">Recognition &amp;<br>credentials</h2>
   <div class="section-divider"></div>
   <div class="certs-grid fade-in">
-    <div class="cert-card">
-      <div class="cert-icon blue">🏅</div>
-      <div class="cert-body">
-        <h4>Tata Group Data Analytics Virtual Job Simulation</h4>
-        <p>Performed AI-powered EDA, predictive modelling, and designed a delinquency risk framework in a simulated enterprise environment.</p>
-        <span class="cert-badge">Forage · Oct 2024</span>
-      </div>
-    </div>
-    <div class="cert-card">
-      <div class="cert-icon green">🏆</div>
-      <div class="cert-body">
-        <h4>Cognizant Digital Nurture Ideathon 2023</h4>
-        <p>Presented a data-driven business solution — recognised among top teams for analytical problem-solving approach.</p>
-        <span class="cert-badge">Cognizant · 2023</span>
-      </div>
-    </div>
-    <div class="cert-card">
-      <div class="cert-icon blue">⭐</div>
-      <div class="cert-body">
-        <h4>TCS Internal Recognition</h4>
-        <p>Recognised at TCS for SLA dashboard automation and improving cross-team visibility through structured analytical reporting.</p>
-        <span class="cert-badge">TCS · 2024</span>
-      </div>
-    </div>
-    <div class="cert-card">
-      <div class="cert-icon orange">📘</div>
-      <div class="cert-body">
-        <h4>Microsoft PL-300 — Power BI Data Analyst Associate</h4>
-        <p>Currently pursuing the Microsoft certified Power BI Data Analyst Associate certification to formalise BI expertise.</p>
-        <span class="cert-badge pursuing">In Progress</span>
-      </div>
-    </div>
+    <div class="cert-card"><div class="cert-icon blue">🏅</div><div class="cert-body"><h4>Tata Group Data Analytics Virtual Job Simulation</h4><p>Performed AI-powered EDA, predictive modelling, and designed a delinquency risk framework in a simulated enterprise environment.</p><span class="cert-badge">Forage · Oct 2024</span></div></div>
+    <div class="cert-card"><div class="cert-icon green">🏆</div><div class="cert-body"><h4>Cognizant Digital Nurture Ideathon 2023</h4><p>Presented a data-driven business solution — recognised among top teams for analytical problem-solving approach.</p><span class="cert-badge">Cognizant · 2023</span></div></div>
+    <div class="cert-card"><div class="cert-icon blue">⭐</div><div class="cert-body"><h4>TCS Internal Recognition</h4><p>Recognised at TCS for SLA dashboard automation and improving cross-team visibility through structured analytical reporting.</p><span class="cert-badge">TCS · 2024</span></div></div>
+    <div class="cert-card"><div class="cert-icon orange">📘</div><div class="cert-body"><h4>Microsoft PL-300 — Power BI Data Analyst Associate</h4><p>Currently pursuing the Microsoft certified Power BI Data Analyst Associate certification to formalise BI expertise.</p><span class="cert-badge pursuing">In Progress</span></div></div>
   </div>
 </section>
 
@@ -763,7 +509,7 @@
       <div class="resume-icon-box">📄</div>
       <div class="resume-card-text">
         <h3>Vernit Tayal — BA / DA Resume</h3>
-        <p>ATS Optimised · 1 Page · Updated 2025</p>
+        <p>ATS Optimised · 1 Page · Updated 2026</p>
         <a href="Vernit_Tayal_Resume_ATS.docx" download class="btn btn-primary">⬇ Download Resume</a>
       </div>
     </div>
@@ -780,40 +526,20 @@
       <h3>Open to new opportunities</h3>
       <p>I'm actively looking for Business Analyst and Data Analyst roles at product-driven companies. If you think I'd be a good fit — or just want to talk data — reach out anytime.</p>
       <div class="contact-links">
-        <a href="mailto:tayal.vernit.0802@gmail.com" class="contact-link">
-          <span class="contact-link-icon">✉️</span> tayal.vernit.0802@gmail.com
-        </a>
-        <a href="https://linkedin.com/in/vernit-tayal-o8o2" target="_blank" class="contact-link">
-          <span class="contact-link-icon">💼</span> linkedin.com/in/vernit-tayal-o8o2
-        </a>
-        <a href="tel:+919528381162" class="contact-link">
-          <span class="contact-link-icon">📞</span> +91-9528381162
-        </a>
+        <a href="mailto:tayal.vernit.0802@gmail.com" class="contact-link"><span class="contact-link-icon">✉️</span> tayal.vernit.0802@gmail.com</a>
+        <a href="https://linkedin.com/in/vernit-tayal-o8o2" target="_blank" class="contact-link"><span class="contact-link-icon">💼</span> linkedin.com/in/vernit-tayal-o8o2</a>
+        <a href="tel:+919528381162" class="contact-link"><span class="contact-link-icon">📞</span> +91-9528381162</a>
       </div>
     </div>
     <div class="fade-in">
       <div class="contact-form-wrap">
         <p class="form-label">✉ Send me a message</p>
         <form class="contact-form" id="contactForm">
-          <div class="form-group">
-            <label for="name">Your Name</label>
-            <input class="form-input" id="name" type="text" placeholder="John Smith" required/>
-          </div>
-          <div class="form-group">
-            <label for="email">Email Address</label>
-            <input class="form-input" id="email" type="email" placeholder="john@company.com" required/>
-          </div>
-          <div class="form-group">
-            <label for="subject">Subject</label>
-            <input class="form-input" id="subject" type="text" placeholder="Job Opportunity / Collaboration"/>
-          </div>
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea class="form-textarea" id="message" placeholder="Hi Vernit, I came across your profile and..." required></textarea>
-          </div>
-          <button type="submit" class="form-submit" id="submitBtn">
-            ✉ Send Message
-          </button>
+          <div class="form-group"><label for="name">Your Name</label><input class="form-input" id="name" type="text" placeholder="John Smith" required/></div>
+          <div class="form-group"><label for="email">Email Address</label><input class="form-input" id="email" type="email" placeholder="john@company.com" required/></div>
+          <div class="form-group"><label for="subject">Subject</label><input class="form-input" id="subject" type="text" placeholder="Job Opportunity / Collaboration"/></div>
+          <div class="form-group"><label for="message">Message</label><textarea class="form-textarea" id="message" placeholder="Hi Vernit, I came across your profile and..." required></textarea></div>
+          <button type="submit" class="form-submit" id="submitBtn">✉ Send Message</button>
         </form>
         <div class="form-success" id="formSuccess">
           <div class="success-icon">✅</div>
@@ -826,19 +552,178 @@
 </section>
 
 <footer>
-  <p>© 2025 Vernit Tayal</p>
+  <p>© 2026 Vernit Tayal</p>
   <p>Gurugram, India · Open to Relocation</p>
 </footer>
 
+<!-- DATAGENIE MODAL -->
+<div class="modal-overlay" id="dataGenieModal" onclick="handleOverlayClick(event)">
+  <div class="modal">
+    <div class="modal-header">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <div class="modal-brand">
+        <div class="modal-icon">🧞</div>
+        <div class="modal-brand-text">
+          <h2>DataGenie</h2>
+          <p>WhatsApp AI Data Analyst · Built by Vernit Tayal · Live on Render.com</p>
+        </div>
+      </div>
+      <div class="modal-tabs">
+        <div class="modal-tab active" onclick="switchTab('overview')">Overview</div>
+        <div class="modal-tab" onclick="switchTab('techstack')">Tech Stack</div>
+        <div class="modal-tab" onclick="switchTab('usecases')">Use Cases</div>
+        <div class="modal-tab" onclick="switchTab('limitations')">Limitations</div>
+      </div>
+    </div>
+
+    <div class="modal-body">
+
+      <!-- OVERVIEW TAB -->
+      <div class="tab-panel active" id="tab-overview">
+        <div class="overview-flow">
+          <span class="flow-step">📱 User sends Excel</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">🟢 Twilio</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">🐍 Flask Server</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">🤖 Groq AI</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">🐼 Pandas</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">📲 WhatsApp Reply</span>
+        </div>
+
+        <p class="overview-desc"><strong>What is DataGenie?</strong> An AI-powered WhatsApp bot that lets anyone upload an Excel file and instantly get data analysis — without needing Excel, Power BI, or any technical tools. Just send a file and ask your question in plain English.</p>
+        <p class="overview-desc"><strong>How does it work?</strong> When a user uploads an Excel file, the bot reads it using Pandas and generates a file summary. The user then types any question. Groq AI (LLama model) generates accurate Pandas code, Python executes it on the actual data, and the result is formatted and sent back. This two-step approach — AI generates code, Pandas runs it — ensures 100% accurate numbers instead of AI hallucinations.</p>
+        <p class="overview-desc"><strong>Why WhatsApp?</strong> Most non-technical users — shop owners, sales managers, HR teams — already live on WhatsApp. They have Excel files but no idea how to analyse them. DataGenie brings data analysis to a platform they already use every day.</p>
+
+        <div class="overview-stats">
+          <div class="ov-stat"><div class="ov-stat-num">₹0</div><div class="ov-stat-label">Total Build Cost</div></div>
+          <div class="ov-stat"><div class="ov-stat-num">7</div><div class="ov-stat-label">Days to Build</div></div>
+          <div class="ov-stat"><div class="ov-stat-num">24/7</div><div class="ov-stat-label">Live on Cloud</div></div>
+        </div>
+      </div>
+
+      <!-- TECH STACK TAB -->
+      <div class="tab-panel" id="tab-techstack">
+        <table class="tech-table">
+          <thead>
+            <tr><th>Tool</th><th>Role</th><th>Why This</th><th>Cost</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="tech-name">Python + Flask</td><td>Backend web server</td><td>Lightweight, fast to build, easy webhook handling</td><td class="cost-free">Free</td></tr>
+            <tr><td class="tech-name">Twilio WhatsApp API</td><td>Send/receive WhatsApp messages</td><td>Most reliable WhatsApp API, easy sandbox for testing</td><td class="cost-free">Free trial</td></tr>
+            <tr><td class="tech-name">Groq API (LLama 3.3)</td><td>Generate Pandas code from questions</td><td>Free, faster than OpenAI, good code generation</td><td class="cost-free">Free</td></tr>
+            <tr><td class="tech-name">Pandas</td><td>Execute analysis on actual data</td><td>Industry standard for data manipulation in Python</td><td class="cost-free">Free</td></tr>
+            <tr><td class="tech-name">openpyxl</td><td>Read/write Excel files</td><td>Best Python library for .xlsx handling</td><td class="cost-free">Free</td></tr>
+            <tr><td class="tech-name">tmpfiles.org API</td><td>Host Excel output files</td><td>No signup, instant upload, free download links</td><td class="cost-free">Free</td></tr>
+            <tr><td class="tech-name">Render.com</td><td>Cloud deployment 24/7</td><td>Free tier, GitHub integration, auto-deploy on push</td><td class="cost-free">Free</td></tr>
+            <tr><td class="tech-name">cron-job.org</td><td>Keep server awake</td><td>Pings server every minute to prevent Render sleep</td><td class="cost-free">Free</td></tr>
+            <tr><td class="tech-name">GitHub</td><td>Version control + CI/CD</td><td>Render deploys automatically on every git push</td><td class="cost-free">Free</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- USE CASES TAB -->
+      <div class="tab-panel" id="tab-usecases">
+        <div class="usecase-card">
+          <div class="usecase-icon">🏪</div>
+          <h4>Small Business Owners</h4>
+          <p>A shop owner tracking monthly sales in Excel can send the file and ask "Which product had highest sales last month?" — without knowing any analytics tools.</p>
+        </div>
+        <div class="usecase-card">
+          <div class="usecase-icon">📞</div>
+          <h4>Call Centre Managers</h4>
+          <p>Upload agent performance data and ask "Which agent has the lowest CSAT score this week?" or "Give me all records where response time is above SLA in Excel."</p>
+        </div>
+        <div class="usecase-card">
+          <div class="usecase-icon">👥</div>
+          <h4>HR Teams</h4>
+          <p>Upload employee data and ask "How many employees joined in Q3?" or "List all employees whose salary is above 50000 in Excel report."</p>
+        </div>
+        <div class="usecase-card">
+          <div class="usecase-icon">📦</div>
+          <h4>Sales & Operations</h4>
+          <p>Upload order data and ask "Which region has the highest revenue?" or "Show me all orders from North region where delivery was delayed."</p>
+        </div>
+        <div class="usecase-card">
+          <div class="usecase-icon">🎓</div>
+          <h4>Students & Analysts</h4>
+          <p>Quickly explore any dataset by asking questions in plain English — great for quick EDA without writing code.</p>
+        </div>
+      </div>
+
+      <!-- LIMITATIONS TAB -->
+      <div class="tab-panel" id="tab-limitations">
+        <div class="limitation-item">
+          <span class="lim-icon">😴</span>
+          <div class="lim-body">
+            <h4>Cold Start Delay</h4>
+            <p>Render free tier sleeps when inactive. First message after a long gap may take 30-50 seconds to respond.</p>
+            <p class="lim-fix">✅ Fix: cron-job.org pings server every minute — reduces this significantly. Full fix requires Render paid plan ($7/month).</p>
+          </div>
+        </div>
+        <div class="limitation-item">
+          <span class="lim-icon">📨</span>
+          <div class="lim-body">
+            <h4>Twilio Sandbox Limit</h4>
+            <p>Free Twilio sandbox allows only 50 messages/day and requires users to join via a code before using the bot.</p>
+            <p class="lim-fix">✅ Fix: Upgrade to Twilio production WhatsApp number (~$15/month) for unlimited messages with no join code required.</p>
+          </div>
+        </div>
+        <div class="limitation-item">
+          <span class="lim-icon">📁</span>
+          <div class="lim-body">
+            <h4>Excel Files Only (.xlsx)</h4>
+            <p>Currently only supports Excel files. CSV, JSON, Google Sheets not yet supported.</p>
+            <p class="lim-fix">✅ Fix: CSV support takes ~2 hours to add. Google Sheets integration planned as next feature.</p>
+          </div>
+        </div>
+        <div class="limitation-item">
+          <span class="lim-icon">🧠</span>
+          <div class="lim-body">
+            <h4>No Conversation Memory</h4>
+            <p>The bot doesn't remember previous questions in the same session — each question is independent. New file upload resets the session.</p>
+            <p class="lim-fix">✅ Fix: Conversation history can be added to the session dictionary — planned for next version.</p>
+          </div>
+        </div>
+        <div class="limitation-item">
+          <span class="lim-icon">📊</span>
+          <div class="lim-body">
+            <h4>No Chart Visualisation</h4>
+            <p>Bot provides text answers and Excel downloads but cannot send chart images directly on WhatsApp via free tier.</p>
+            <p class="lim-fix">✅ Fix: Imgur API integration for chart hosting planned — would enable sending bar/line charts as images.</p>
+          </div>
+        </div>
+        <div class="limitation-item">
+          <span class="lim-icon">🔒</span>
+          <div class="lim-body">
+            <h4>No Data Persistence</h4>
+            <p>Uploaded files are stored temporarily in server memory. If Render restarts, session is lost and user must re-upload.</p>
+            <p class="lim-fix">✅ Fix: Adding a database (PostgreSQL — free on Render) would persist sessions across restarts.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="modal-footer">
+      <p>🧞 DataGenie is live at <strong>datagenie-q2fy.onrender.com</strong></p>
+      <a href="https://wa.me/14155238886?text=join%20this-involved" target="_blank" class="btn btn-primary btn-sm">💬 Try on WhatsApp</a>
+      <button class="btn btn-ghost btn-sm" onclick="closeModal()">Close</button>
+    </div>
+  </div>
+</div>
+
 <script>
-  // THEME TOGGLE
+  // THEME
   const toggle = document.getElementById('themeToggle');
   const html = document.documentElement;
   const saved = localStorage.getItem('theme') || 'light';
   html.setAttribute('data-theme', saved);
   toggle.addEventListener('click', () => {
-    const current = html.getAttribute('data-theme');
-    const next = current === 'dark' ? 'light' : 'dark';
+    const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
     html.setAttribute('data-theme', next);
     localStorage.setItem('theme', next);
   });
@@ -859,7 +744,29 @@
     });
   });
 
-  // CONTACT FORM — sends via mailto (works on GitHub Pages for free)
+  // MODAL
+  function openModal() {
+    document.getElementById('dataGenieModal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    document.getElementById('dataGenieModal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function handleOverlayClick(e) {
+    if (e.target === document.getElementById('dataGenieModal')) closeModal();
+  }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+  // TABS
+  function switchTab(tab) {
+    document.querySelectorAll('.modal-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    event.target.classList.add('active');
+    document.getElementById('tab-' + tab).classList.add('active');
+  }
+
+  // CONTACT FORM
   document.getElementById('contactForm').addEventListener('submit', function(e) {
     e.preventDefault();
     const btn = document.getElementById('submitBtn');
@@ -867,16 +774,10 @@
     const email = document.getElementById('email').value;
     const subject = document.getElementById('subject').value || 'Portfolio Contact';
     const message = document.getElementById('message').value;
-
     btn.textContent = 'Sending...';
     btn.disabled = true;
-
-    // Build mailto link
     const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
-    const mailtoLink = `mailto:tayal.vernit.0802@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    window.location.href = mailtoLink;
-
-    // Show success after short delay
+    window.location.href = `mailto:tayal.vernit.0802@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     setTimeout(() => {
       document.getElementById('contactForm').style.display = 'none';
       document.getElementById('formSuccess').style.display = 'block';
