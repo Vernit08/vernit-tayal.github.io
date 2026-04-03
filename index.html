@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Vernit Tayal — Analyst</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -97,7 +98,7 @@
     .hero-sub { font-size: 0.97rem; color: var(--text2); max-width: 480px; line-height: 1.85; margin-bottom: 2.5rem; font-weight: 300; transition: color var(--transition); }
     .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
     .hero-visual { display: flex; align-items: center; justify-content: center; position: relative; }
-    .hero-card-stack { position: relative; width: 100%; max-width: 440px; }
+    .hero-card-stack { position: relative; width: 100%; max-width: 450px; }
     .hero-img-card { background: #0D1117; border-radius: 16px; border: 1px solid rgba(59,130,246,0.2); box-shadow: 0 28px 70px rgba(0,0,0,0.35); overflow: hidden; font-family: 'Courier New', monospace; }
     .code-titlebar { background: #161B22; padding: 0.6rem 1rem; display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.06); }
     .dot { width: 10px; height: 10px; border-radius: 50%; }
@@ -154,7 +155,7 @@
 
     /* PROJECTS */
     #projects { background: var(--bg); transition: background var(--transition); }
-    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.8rem; max-width: 1100px; }
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1rem; max-width: 1100px; }
     .project-card { border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; background: var(--card); transition: transform 0.25s, box-shadow 0.25s, background var(--transition), border-color var(--transition); }
     .project-card:hover { transform: translateY(-5px); box-shadow: 0 16px 50px rgba(59,130,246,0.12); border-color: rgba(59,130,246,0.3); }
     .project-top { padding: 2rem; background: linear-gradient(135deg, #0F2347 0%, #1B4A8A 50%, #2563EB 100%); position: relative; overflow: hidden; }
@@ -162,7 +163,7 @@
     .project-top.datagenie-top { background: linear-gradient(135deg, #064E3B 0%, #065F46 50%, #059669 100%); }
     .project-num { font-family: var(--serif); font-size: 3rem; color: rgba(255,255,255,0.12); line-height: 1; }
     .project-title { font-family: var(--serif); font-size: 1.15rem; color: white; line-height: 1.3; }
-    .project-body { padding: 1.6rem; }
+    .project-body { padding: 1rem; }
     .project-desc { font-size: 0.88rem; color: var(--text2); margin-bottom: 1.2rem; line-height: 1.75; transition: color var(--transition); }
     .project-highlights { list-style: none; margin-bottom: 1.4rem; }
     .project-highlights li { font-size: 0.84rem; color: var(--text); padding: 0.28rem 0 0.28rem 1rem; position: relative; transition: color var(--transition); }
@@ -172,7 +173,9 @@
 
     /* DataGenie live badge */
     .live-badge { display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #10B981; background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.25); padding: 0.2rem 0.6rem; border-radius: 20px; margin-bottom: 0.8rem; }
+    .live-badges { display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #b91010; background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.25); padding: 0.2rem 0.6rem; border-radius: 20px; margin-bottom: 0.8rem; }
     .live-dot { width: 6px; height: 6px; border-radius: 50%; background: #10B981; box-shadow: 0 0 6px #10B981; animation: livePulse 2s infinite; }
+    .live-dots { width: 6px; height: 6px; border-radius: 50%; background: #b91010; box-shadow: 0 0 6px #f10606; animation: livePulse 2s infinite; }
     @keyframes livePulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
 
     /* MODAL */
@@ -389,7 +392,7 @@
 <!-- ABOUT -->
 <section id="about">
   <div class="section-label">About Me</div>
-  <h2 class="section-title">Analyst by role,<br>problem-solver by nature</h2>
+  <h2 class="section-title">Analyst by role, problem-solver by nature</h2>
   <div class="section-divider"></div>
   <div class="about-grid">
     <div class="about-text fade-in">
@@ -410,7 +413,7 @@
 <!-- SKILLS -->
 <section id="skills">
   <div class="section-label">Core Skills</div>
-  <h2 class="section-title">What I bring<br>to the table</h2>
+  <h2 class="section-title">What I bring to the table</h2>
   <div class="section-divider"></div>
   <div class="skills-grid fade-in">
     <div class="skill-card"><div class="skill-icon">📊</div><h3>Analytics</h3><div class="skill-tags"><span class="tag">SQL</span><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Excel</span><span class="tag">EDA</span><span class="tag">ETL</span></div></div>
@@ -423,59 +426,25 @@
 <!-- PROJECTS -->
 <section id="projects">
   <div class="section-label">Projects</div>
-  <h2 class="section-title">Work I'm<br>proud of</h2>
+  <h2 class="section-title">Work I'm proud of</h2>
   <div class="section-divider"></div>
   <div class="projects-grid fade-in">
 
-    <!-- Project 01 -->
-    <div class="project-card">
-      <div class="project-top">
-        <div class="project-num">01</div>
-        <div class="project-title">Customer Credit Risk &amp; Delinquency Analysis</div>
-      </div>
-      <div class="project-body">
-        <p class="project-desc">End-to-end analytics simulating a fintech/banking BA use case — from raw SQL extraction to executive Power BI dashboard.</p>
-        <ul class="project-highlights">
-          <li>Analysed 100K+ records via optimised SQL queries &amp; ETL pipeline</li>
-          <li>Applied data modelling &amp; feature engineering — top 5 default predictors</li>
-          <li>Power BI dashboard flagging segments driving 62% of delinquency losses</li>
-        </ul>
-        <div class="project-tools"><span class="tag">SQL</span><span class="tag">Python</span><span class="tag">Power BI</span><span class="tag">Pandas</span><span class="tag">EDA</span></div>
-      </div>
-    </div>
-
-    <!-- Project 02 -->
-    <div class="project-card">
-      <div class="project-top">
-        <div class="project-num">02</div>
-        <div class="project-title">Sales &amp; Revenue Performance Analytics</div>
-      </div>
-      <div class="project-body">
-        <p class="project-desc">BI reporting solution for a retail/FMCG scenario — built for stakeholder self-service and executive decision-making.</p>
-        <ul class="project-highlights">
-          <li>Integrated SQL Server with Power BI for real-time KPI monitoring</li>
-          <li>Authored 15+ DAX measures: MoM growth, YoY variance, profit margin</li>
-          <li>Built Revenue Trend, Regional Heatmap &amp; Product Mix dashboards</li>
-        </ul>
-        <div class="project-tools"><span class="tag">Power BI</span><span class="tag">SQL</span><span class="tag">DAX</span><span class="tag">Excel</span></div>
-      </div>
-    </div>
-
-    <!-- Project 03 — DataGenie -->
+    <!-- Project 01 — DataGenie -->
     <div class="project-card" id="dataGenieCard">
       <div class="project-top datagenie-top">
-        <div class="project-num">03</div>
+        <div class="project-num">01</div>
         <div class="project-title">DataGenie 🧞 — WhatsApp AI Data Analyst</div>
       </div>
       <div class="project-body">
         <div class="live-badge"><span class="live-dot"></span> Live & Deployed</div>
-        <p class="project-desc">An AI-powered WhatsApp bot that analyses any Excel file — built from scratch and deployed on cloud. Send a file, ask a question, get instant insights or Excel reports.</p>
+        <p class="project-desc">An AI-powered WhatsApp bot that analyses any Excel file — built from scratch and deployed on cloud. </p>
         <ul class="project-highlights">
-          <li>AI generates accurate Pandas code to answer data questions</li>
+          <li>Send a file, ask a question, get instant insights or Excel reports.</li>
           <li>Auto file summary + Excel report with download link</li>
           <li>Deployed 24/7 on Render.com with Twilio WhatsApp API</li>
         </ul>
-        <div class="project-tools"><span class="tag">Python</span><span class="tag">Flask</span><span class="tag">Groq AI</span><span class="tag">Pandas</span><span class="tag">Twilio</span><span class="tag">Render</span></div>
+        <div class="project-tools"><span class="tag">Python</span><span class="tag">Flask</span><span class="tag">Groq AI</span><span class="tag">Pandas</span><span class="tag">Render</span></div>
         <div class="project-actions">
           <button class="btn btn-primary btn-sm" onclick="openModal()">📖 Full Details</button>
           <a href="https://wa.me/14155238886?text=join%20this-involved" target="_blank" class="btn btn-ghost btn-sm">💬 Try on WhatsApp</a>
@@ -483,26 +452,78 @@
       </div>
     </div>
 
+
+
+    <!-- Project 02 -->
+    <div class="project-card">
+      <div class="project-top">
+        <div class="project-num">02</div>
+        <div class="project-title">Customer Credit Risk &amp; Delinquency Analysis</div>
+      </div>
+      <div class="project-body">
+        <div class="live-badges"><span class="live-dots"></span> Will be live soon</div>
+        <p class="project-desc">End-to-end analytics simulating a fintech/banking BA use case — from raw SQL extraction to executive Power BI dashboard.</p>
+        <ul class="project-highlights">
+          <li>Analysed 100K+ records via optimised SQL queries &amp; ETL pipeline</li>
+          <li>Applied data modelling &amp; feature engineering — top 5 default predictors</li>
+          <li>Power BI dashboard flagging segments driving 62% of delinquency losses</li>
+        </ul>
+        <div class="project-tools"><span class="tag">SQL</span><span class="tag">Python</span><span class="tag">Power BI</span><span class="tag">Pandas</span><span class="tag">EDA</span></div>
+        <div class="project-actions">
+          <!-- <button class="btn btn-primary btn-sm" onclick="openModal()">📖 Full Details</button> -->
+        </div>
+    </div>
+    </div>
+
+    <!-- Project 03 -->
+    <div class="project-card">
+      <div class="project-top">
+        <div class="project-num">03</div>
+        <div class="project-title">Sales &amp; Revenue Performance Analytics</div>
+      </div>
+      <div class="project-body">
+        <div class="live-badges"><span class="live-dots"></span> Will be live soon</div>
+        <p class="project-desc">BI reporting solution for a retail/FMCG scenario — built for stakeholder self-service and executive decision-making.</p>
+        <ul class="project-highlights">
+          <li>Integrated SQL Server with Power BI for real-time KPI monitoring</li>
+          <li>Authored 15+ DAX measures: MoM growth, YoY variance, profit margin</li>
+          <li>Built Revenue Trend, Regional Heatmap &amp; Product Mix dashboards</li>
+        </ul>
+        <div class="project-tools"><span class="tag">Power BI</span><span class="tag">SQL</span><span class="tag">DAX</span><span class="tag">Excel</span></div>
+        <div class="project-actions">
+          <!-- <button class="btn btn-primary btn-sm" onclick="openModal()">📖 Full Details</button> -->
+        </div>
+    </div>
+    </div>
+
+    
+
   </div>
 </section>
 
 <!-- CERTIFICATIONS -->
 <section id="certifications">
   <div class="section-label">Certifications &amp; Achievements</div>
-  <h2 class="section-title">Recognition &amp;<br>credentials</h2>
+  <h2 class="section-title">Recognition &amp; credentials</h2>
   <div class="section-divider"></div>
   <div class="certs-grid fade-in">
-    <div class="cert-card"><div class="cert-icon blue">🏅</div><div class="cert-body"><h4>Tata Group Data Analytics Virtual Job Simulation</h4><p>Performed AI-powered EDA, predictive modelling, and designed a delinquency risk framework in a simulated enterprise environment.</p><span class="cert-badge">Forage · Oct 2024</span></div></div>
-    <div class="cert-card"><div class="cert-icon green">🏆</div><div class="cert-body"><h4>Cognizant Digital Nurture Ideathon 2023</h4><p>Presented a data-driven business solution — recognised among top teams for analytical problem-solving approach.</p><span class="cert-badge">Cognizant · 2023</span></div></div>
-    <div class="cert-card"><div class="cert-icon blue">⭐</div><div class="cert-body"><h4>TCS Internal Recognition</h4><p>Recognised at TCS for SLA dashboard automation and improving cross-team visibility through structured analytical reporting.</p><span class="cert-badge">TCS · 2024</span></div></div>
-    <div class="cert-card"><div class="cert-icon orange">📘</div><div class="cert-body"><h4>Microsoft PL-300 — Power BI Data Analyst Associate</h4><p>Currently pursuing the Microsoft certified Power BI Data Analyst Associate certification to formalise BI expertise.</p><span class="cert-badge pursuing">In Progress</span></div></div>
+    <a href="https://credentials.databricks.com/bc2825dd-e587-49a0-b255-8d7de1e7619b#acc.DCEU12MQ" target="_blank" style="text-decoration:none;">
+  <div class="cert-card" style="cursor:pointer;"><div class="cert-icon blue">📊</div><div class="cert-body"><h4>Databricks Certified Data Analyst Associate 2026</h4><p>Validated proficiency in data analysis using Databricks — covering data analytics, visualisation, and working with Lakehouse architecture.</p><span class="cert-badge">Databricks · ↗</span></div></div></a>
+  <a href="https://www.theforage.com/completion-certificates/ifobHAoMjQs9s6bKS/gMTdCXwDdLYoXZ3wG_ifobHAoMjQs9s6bKS_FpqMgp7mkuG6jJ4xJ_1761588317532_completion_certificate.pdf" target="_blank" style="text-decoration:none;">
+  <div class="cert-card" style="cursor:pointer;"><div class="cert-icon blue">🏅</div><div class="cert-body"><h4>GenAI	Powered	Data	Analytics	Job	Simulation 2025</h4><p>Performed AI-powered EDA, predictive modelling, and designed a delinquency risk framework in a simulated enterprise environment.</p><span class="cert-badge">Forage · ↗</span></div></div></a>
+  <a href="https://drive.google.com/file/d/1l23mfGzDHSryIM61QHPwyYvflCmsTA0J/view?usp=sharing" target="_blank" style="text-decoration:none;">
+  <div class="cert-card" style="cursor:pointer;"><div class="cert-icon blue">🏆</div><div class="cert-body"><h4>Cognizant Digital Nurture Ideathon 2023</h4><p>Presented a data-driven business solution — recognised among top teams for analytical problem-solving approach.</p><span class="cert-badge">Cognizant · ↗</span></div></div></a>
+  <!-- <a href="https://credentials.databricks.com/bc2825dd-e587-49a0-b255-8d7de1e7619b#acc.DCEU12MQ" target="_blank" style="text-decoration:none;"> -->
+  <div class="cert-card" style="cursor:pointer;"><div class="cert-icon blue">⭐</div><div class="cert-body"><h4>TCS Internal Recognition 2026</h4><p>Recognised at TCS for SLA dashboard automation and improving cross-team visibility through structured analytical reporting.</p><span class="cert-badge">TCS </span></div></div></a>
+  <!-- <a href="https://credentials.databricks.com/bc2825dd-e587-49a0-b255-8d7de1e7619b#acc.DCEU12MQ" target="_blank" style="text-decoration:none;"> -->
+  <div class="cert-card" style="cursor:pointer;"><div class="cert-icon blue">📘</div><div class="cert-body"><h4>Microsoft PL-300 — Power BI Data Analyst Associate</h4><p>Currently pursuing the Microsoft certified Power BI Data Analyst Associate certification.</p><span class="cert-badge pursuing">In Progress</span></div></div></a>
   </div>
 </section>
 
 <!-- RESUME -->
 <section id="resume">
   <div class="section-label">Resume</div>
-  <h2 class="section-title">Download my<br>resume</h2>
+  <h2 class="section-title">Download my resume</h2>
   <div class="section-divider"></div>
   <div class="resume-inner fade-in">
     <div class="resume-card">
@@ -510,7 +531,7 @@
       <div class="resume-card-text">
         <h3>Vernit Tayal — BA / DA Resume</h3>
         <p>ATS Optimised · 1 Page · Updated 2026</p>
-        <a href="Vernit_Tayal_Resume_ATS.docx" download class="btn btn-primary">⬇ Download Resume</a>
+        <a href="https://docs.google.com/document/d/1LPx8GypzG1ZTTr9YiYJgHHmTWozCaiHN/edit?usp=sharing&ouid=104021647384780215310&rtpof=true&sd=true" download class="btn btn-primary">⬇ Download Resume</a>
       </div>
     </div>
   </div>
@@ -583,7 +604,9 @@
         <div class="overview-flow">
           <span class="flow-step">📱 User sends Excel</span>
           <span class="flow-arrow">→</span>
-          <span class="flow-step">🟢 Twilio</span>
+          <span class="flow-step">💬 WhatsApp</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">🔴 Twilio</span>
           <span class="flow-arrow">→</span>
           <span class="flow-step">🐍 Flask Server</span>
           <span class="flow-arrow">→</span>
@@ -595,12 +618,12 @@
         </div>
 
         <p class="overview-desc"><strong>What is DataGenie?</strong> An AI-powered WhatsApp bot that lets anyone upload an Excel file and instantly get data analysis — without needing Excel, Power BI, or any technical tools. Just send a file and ask your question in plain English.</p>
-        <p class="overview-desc"><strong>How does it work?</strong> When a user uploads an Excel file, the bot reads it using Pandas and generates a file summary. The user then types any question. Groq AI (LLama model) generates accurate Pandas code, Python executes it on the actual data, and the result is formatted and sent back. This two-step approach — AI generates code, Pandas runs it — ensures 100% accurate numbers instead of AI hallucinations.</p>
+        <p class="overview-desc"><strong>How does it work?</strong> When a user uploads an Excel file on WhatsApp bot, the bot reads it using Pandas and generates a file summary. The user then types any question. Groq AI (LLama model) generates accurate Pandas code, Python executes it on the actual data, and the result is formatted and sent back. This two-step approach — AI generates code, Pandas runs it — ensures 100% accurate numbers instead of AI hallucinations.</p>
         <p class="overview-desc"><strong>Why WhatsApp?</strong> Most non-technical users — shop owners, sales managers, HR teams — already live on WhatsApp. They have Excel files but no idea how to analyse them. DataGenie brings data analysis to a platform they already use every day.</p>
 
         <div class="overview-stats">
           <div class="ov-stat"><div class="ov-stat-num">₹0</div><div class="ov-stat-label">Total Build Cost</div></div>
-          <div class="ov-stat"><div class="ov-stat-num">7</div><div class="ov-stat-label">Days to Build</div></div>
+          <div class="ov-stat"><div class="ov-stat-num">5</div><div class="ov-stat-label">Days to Build</div></div>
           <div class="ov-stat"><div class="ov-stat-num">24/7</div><div class="ov-stat-label">Live on Cloud</div></div>
         </div>
       </div>
@@ -709,9 +732,12 @@
     </div>
 
     <div class="modal-footer">
-      <p>🧞 DataGenie is live at <strong>datagenie-q2fy.onrender.com</strong></p>
+      <!-- <p>🧞 DataGenie is live at <strong>datagenie-q2fy.onrender.com</strong></p> -->
       <a href="https://wa.me/14155238886?text=join%20this-involved" target="_blank" class="btn btn-primary btn-sm">💬 Try on WhatsApp</a>
-      <button class="btn btn-ghost btn-sm" onclick="closeModal()">Close</button>
+      <!-- <button class="btn btn-ghost btn-sm" onclick="closeModal()">Close</button> -->
+       <a href="https://github.com/Vernit08/DataGenie" target="_blank" class="btn btn-ghost btn-sm">
+    <i class="fa-brands fa-github"></i> View on GitHub
+</a>
     </div>
   </div>
 </div>
